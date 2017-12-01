@@ -17,8 +17,9 @@ public class PackageInfo implements Serializable
 	private String State;
 	private String Zip;
 	private String Date;
+	private String DelType;
 	
-	public PackageInfo(int PackageNumber,String FirstName,String LastName,String Address,String City,String State,String Zip, String Date) 
+	public PackageInfo(int PackageNumber,String FirstName,String LastName,String Address,String City,String State,String Zip, String Date, String DType) 
 	{
 		this.PNumber = PackageNumber;
 		this.FName=FirstName;
@@ -28,20 +29,13 @@ public class PackageInfo implements Serializable
 		this.State= State;
 		this.Zip= Zip;
 		this.Date=Date;
+		this.DelType= DType;
 	
 	}
 	
 	public PackageInfo(int PackageNumber,String FirstName,String LastName,String Address,String City,String State,String Zip) 
 	{
-		this(PackageNumber,FirstName,LastName,Address,City,State,Zip,"");
-//		this.PNumber = PackageNumber;
-	//	this.FName=FirstName;
-	//	this.LName = LastName;
-	//	this.Address = Address;
-	//	this.City= City;
-	//	this.State= State;
-	//	this.Zip= Zip;
-		
+		this(PackageNumber,FirstName,LastName,Address,City,State,Zip,"", "");
 	}
 	public int GetPNumber()
 	{
@@ -75,10 +69,19 @@ public class PackageInfo implements Serializable
 	{
 		return Date;
 	}
+	public String GetDelType()
+	{
+		return DelType;
+	}
 	public void SetDate(String date)
 	{
 		this.Date= date;
 	}
+	public void SetDelType(String DType)
+	{
+		this.DelType= DType;
+	}
+	
 
 	// Returns true if date is entered(if a date has been entered for pickup or delivery)
 	public boolean status() {

@@ -19,10 +19,10 @@ import java.util.LinkedList;
 import java.util.List;
 
 
-public class PickUp implements Iterable<PackageInfo>, Serializable
+public class Delivery implements Iterable<PackageInfo>, Serializable
 {
 	private List<PackageInfo> list;
-	public PickUp()
+	public Delivery()
 	{
 		list = new LinkedList<PackageInfo>();
 	}
@@ -30,13 +30,13 @@ public class PickUp implements Iterable<PackageInfo>, Serializable
 	
 	
 // This adds a package to the end of the package list
-	public void addPickUp(PackageInfo packageinfo) {
+	public void addDelivery(PackageInfo packageinfo) {
 		if (packageinfo!= null)
 			list.add(packageinfo);
 	}
 	
 //	This add a package after package specified
-	public void addPickUpAfter(PackageInfo Package,PackageInfo newPackage)
+	public void addDeliveryAfter(PackageInfo Package,PackageInfo newPackage)
 	{
 		if (Package == null || newPackage == null)
 			return;
@@ -99,12 +99,13 @@ public void save (String filename) throws IOException
 	oos.close();
 }
 
-//	This loads a serialized PickUp from the filename
-public PickUp load(String filename)throws IOException, ClassNotFoundException{
+//	This loads a serialized Delivery from the filename
+public Delivery load(String filename)throws IOException, ClassNotFoundException{
 	FileInputStream fis= new FileInputStream(filename);
 	ObjectInputStream ois = new ObjectInputStream(fis);
-	PickUp PU = (PickUp) ois.readObject();
+	Delivery Deliver = (Delivery) ois.readObject();
 	ois.close();
-	return PU;
+	return Deliver;
 }
 }
+
