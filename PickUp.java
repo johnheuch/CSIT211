@@ -1,10 +1,9 @@
-//Author:				John Heuchan
+//Author:				John Heuchan, Tyler Haigis, Rafay Khurram
 //Program Name:			PickUp.java
-//Program Description:	This is the linked list of the data  with PackageInfo.java.
+//Program Description:	This is the linked list of the data with PackageInfo.java.
 //						This handles this list and calls the Packageinfo methods.
 //						****THIS FILE WILL NOT BE SUBMIITED FOR FINAL
-//						The PU load is edited out I am working on the load function but wanted everone to see what I had
-//						Open for suggecstions  I will be adding comments
+//						This controls the Delivery information						
 //IDE used:				Eclipse IDE for Java Developers, Version: Oxygen Release (4.7.0)
 
 import java.io.FileInputStream;
@@ -29,13 +28,13 @@ public class PickUp implements Iterable<PackageInfo>, Serializable
 	
 	
 	
-// This adds a package to the end of the package list
+// This adds PickUp package information to the end of the PickUp package list
 	public void addPickUp(PackageInfo packageinfo) {
 		if (packageinfo!= null)
 			list.add(packageinfo);
 	}
 	
-//	This add a package after package specified
+//	This adds PickUp package information after the specified package information
 	public void addPickUpAfter(PackageInfo Package,PackageInfo newPackage)
 	{
 		if (Package == null || newPackage == null)
@@ -45,7 +44,7 @@ public class PickUp implements Iterable<PackageInfo>, Serializable
 			list.add(PackageLocation+1, newPackage);
 	}
 	
-//	This will change the target package with a new package
+//	This will change the target PickUp package with a new PickUppackage
 	public void change(PackageInfo Package,PackageInfo newPackage)
 	{
 		if (Package == null || newPackage == null)
@@ -55,7 +54,7 @@ public class PickUp implements Iterable<PackageInfo>, Serializable
 			list.add(PackageLocation, newPackage);
 	}	
 	
-//  This finds and returns the information relating to the package
+//  This finds and returns the Pickup information relating to the package
 	public PackageInfo find(int number) 
 	{
 		for (PackageInfo packageinfo :list) 
@@ -64,7 +63,7 @@ public class PickUp implements Iterable<PackageInfo>, Serializable
 		return null;	
 	}
 	
-//	This returns if the number has been used in the list
+//	This returns if the PickUp number has been used in the list
 //
 //	This returns true if found and false if number not found 
 	public boolean CheckNumber(int number)
@@ -75,7 +74,7 @@ public class PickUp implements Iterable<PackageInfo>, Serializable
 		return false;
 	}
 	
-//This produces a list of the PackageInfo 	
+//This produces a list of the PickUp package information 	
 	public String toString() {
 	String results ="";
 	for(PackageInfo packageinfo : list)
@@ -89,21 +88,21 @@ public Iterator<PackageInfo> iterator(){
 	return list.iterator();
 }
 
-//	This saves a serialized version fo this PickUp to the filename
-public void save (String filename) throws IOException
+//	This saves a serialized version for the PickUp Information to the filename
+public void save (String filename, PickUp PU) throws IOException
 {
-	FileOutputStream fos= new FileOutputStream(filename);
-	ObjectOutputStream oos = new ObjectOutputStream(fos);
-	oos.writeObject(this);
+	FileOutputStream fileOut= new FileOutputStream(filename);
+	ObjectOutputStream oos = new ObjectOutputStream(fileOut);
+	oos.writeObject(PU);
 	oos.flush();
 	oos.close();
 }
 
-//	This loads a serialized PickUp from the filename
+//	This loads a serialized PickUp information from the filename
 public PickUp load(String filename)throws IOException, ClassNotFoundException{
-	FileInputStream fis= new FileInputStream(filename);
-	ObjectInputStream ois = new ObjectInputStream(fis);
-	PickUp PU = (PickUp) ois.readObject();
+	FileInputStream fileIn = new FileInputStream(filename);
+	ObjectInputStream ois = new ObjectInputStream(fileIn);
+	PickUp PU =  (PickUp) ois.readObject();
 	ois.close();
 	return PU;
 }

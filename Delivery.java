@@ -1,14 +1,13 @@
-//Author:				John Heuchan
-//Program Name:			PickUp.java
+//Author:				John Heuchan, Tyler Haigis, Rafay Khurram
+//Program Name:			Delivery.java
 //Program Description:	This is the linked list of the data  with PackageInfo.java.
-//						This handles this list and calls the Packageinfo methods.
-//						****THIS FILE WILL NOT BE SUBMIITED FOR FINAL
-//						The PU load is edited out I am working on the load function but wanted everone to see what I had
-//						Open for suggecstions  I will be adding comments
+//						This handles this list and calls the PackageInfo methods.
+//						This controls the Delivery information
+//						
 //IDE used:				Eclipse IDE for Java Developers, Version: Oxygen Release (4.7.0)
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+//import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -29,13 +28,13 @@ public class Delivery implements Iterable<PackageInfo>, Serializable
 	
 	
 	
-// This adds a package to the end of the package list
+// This adds a package delivery information to the end of the package list
 	public void addDelivery(PackageInfo packageinfo) {
 		if (packageinfo!= null)
 			list.add(packageinfo);
 	}
 	
-//	This add a package after package specified
+//	This adds a package delivery information after package specified
 	public void addDeliveryAfter(PackageInfo Package,PackageInfo newPackage)
 	{
 		if (Package == null || newPackage == null)
@@ -45,7 +44,7 @@ public class Delivery implements Iterable<PackageInfo>, Serializable
 			list.add(PackageLocation+1, newPackage);
 	}
 	
-//	This will change the target package with a new package
+//	This will change the target package delivery information with new package delivery information.
 	public void change(PackageInfo Package,PackageInfo newPackage)
 	{
 		if (Package == null || newPackage == null)
@@ -55,7 +54,7 @@ public class Delivery implements Iterable<PackageInfo>, Serializable
 			list.add(PackageLocation, newPackage);
 	}	
 	
-//  This finds and returns the information relating to the package
+//  This finds and returns the delivery information relating to the package
 	public PackageInfo find(int number) 
 	{
 		for (PackageInfo packageinfo :list) 
@@ -75,7 +74,7 @@ public class Delivery implements Iterable<PackageInfo>, Serializable
 		return false;
 	}
 	
-//This produces a list of the PackageInfo 	
+//This produces a list of the Delivery information the package. 	
 	public String toString() {
 	String results ="";
 	for(PackageInfo packageinfo : list)
@@ -84,12 +83,12 @@ public class Delivery implements Iterable<PackageInfo>, Serializable
 	
 }
 
-//	This returns a iterator for PickUp	
+//	This returns a iterator for Delivery.	
 public Iterator<PackageInfo> iterator(){
 	return list.iterator();
 }
 
-//	This saves a serialized version fo this PickUp to the filename
+//	This saves a serialized version for this delivery information to the filename
 public void save (String filename) throws IOException
 {
 	FileOutputStream fos= new FileOutputStream(filename);
@@ -99,7 +98,7 @@ public void save (String filename) throws IOException
 	oos.close();
 }
 
-//	This loads a serialized Delivery from the filename
+//	This loads a serialized delivery information from the filename
 public Delivery load(String filename)throws IOException, ClassNotFoundException{
 	FileInputStream fis= new FileInputStream(filename);
 	ObjectInputStream ois = new ObjectInputStream(fis);
