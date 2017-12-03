@@ -90,7 +90,7 @@ public class PackageGUI
 					}
 				}
 
-				//======================= Need to remove from list/dequeue==============================
+				
 				JOptionPane.showMessageDialog(null, "Pick Ups:\n"+output);
 				output = "";
 				
@@ -109,7 +109,7 @@ public class PackageGUI
 				}
 				
 			}
-			  //=========================================================================================
+			  
 			
 			// Cancel Shipment
 			else if (option.equalsIgnoreCase("Cancel Shipment")) 
@@ -126,7 +126,6 @@ public class PackageGUI
 					}
 				}
 				
-				//======================= Need to remove from list/dequeue=====================================================
 				JOptionPane.showMessageDialog(null, "Select which shipment to cancel: \n" +output);
 				output ="";
 				
@@ -142,7 +141,7 @@ public class PackageGUI
 					System.out.println(" Package Number : " + PNumber + ", has been canceled.");
 				}
 			}
-			   //=================================================================================================================
+
 			
 			
 			// View
