@@ -33,6 +33,11 @@ public class PickUp implements Iterable<PackageInfo>, Serializable
 		if (packageinfo!= null)
 			list.add(packageinfo);
 	}
+// Thi removes PickUp package information to the end of the PickUp package list
+	public void addRemove(PackageInfo packageinfo) {
+		if (packageinfo!= null)
+			list.remove(packageinfo);
+	}
 	
 //	This adds PickUp package information after the specified package information
 	public void addPickUpAfter(PackageInfo Package,PackageInfo newPackage)
