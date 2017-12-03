@@ -34,7 +34,7 @@ public class PickUp implements Iterable<PackageInfo>, Serializable
 			list.add(packageinfo);
 	}
 // Thi removes PickUp package information to the end of the PickUp package list
-	public void addRemove(PackageInfo packageinfo) {
+	public void removePickUp(PackageInfo packageinfo) {
 		if (packageinfo!= null)
 			list.remove(packageinfo);
 	}
