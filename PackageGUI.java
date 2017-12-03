@@ -1,6 +1,7 @@
 //Author:				John Heuchan, Tyler Haigis, Rafay Khurram
-//Program Name:				PackageGUI.java
-//Program Description:			This GUI program include the main method for final project.				
+//Program Name:			PackageGUI.java
+//Program Description:	This GUI program include the main method for final project.
+//						
 //IDE used:				Eclipse IDE for Java Developers, Version: Oxygen Release (4.7.0)
 
 import javax.swing.*;
@@ -45,6 +46,7 @@ public class PackageGUI
 			// Ship
 			if (option.equalsIgnoreCase("Ship"))
 			{
+				PickUp pick = new PickUp();
 				Delivery del = new Delivery(); // used to create and store deliveries
 				PackageInfo packIn = new PackageInfo(PNumber, FName, LName, Address, city, state, zip, date);
 				
@@ -62,15 +64,16 @@ public class PackageGUI
 				
 				if (temp.packageCheck())
 				{
-					pickupQueue.enqueue(temp);	  // Queue for pickups
+					pickupQueue.enqueue(temp); // Queue for pickups
+					pick.addPickUp(packIn);
+					
 				}
 				else
 				{
 					shippingQueue.enqueue(temp); // Queue for deliveries
 					del.addDelivery(packIn);
-					del.addDeliveryAfter(packIn, packIn);
-				}
-				
+					//del.addDeliveryAfter(packIn, packIn);
+				}	
 			}
 			
 			// Pick up
@@ -96,12 +99,15 @@ public class PackageGUI
 				pu.CheckNumber(PNumber);
 				pu.iterator();
 				pu.save(pickUp);
+				//pu.removePickUp(pickUp);
 				
 				if (pu.CheckNumber(PNumber) == true)
 				{
 					pickupQueue.dequeue();
+					//pu.removePickUp(PNumber);
 					System.out.println(" Package Number: " + PNumber + ", has been picked up. ");
 				}
+				
 			}
 			  //=========================================================================================
 			
