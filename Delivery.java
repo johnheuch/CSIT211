@@ -33,6 +33,11 @@ public class Delivery implements Iterable<PackageInfo>, Serializable
 		if (packageinfo!= null)
 			list.add(packageinfo);
 	}
+// This removes a package delivery information to the end of the package list
+	public void removeDelivery(PackageInfo packageinfo) {
+		if (packageinfo!= null)
+			list.remove(packageinfo);
+	}
 	
 //	This adds a package delivery information after package specified
 	public void addDeliveryAfter(PackageInfo Package,PackageInfo newPackage)
