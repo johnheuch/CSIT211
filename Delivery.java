@@ -1,13 +1,11 @@
-//Author:				John Heuchan, Tyler Haigis, Rafay Khurram
-//Program Name:			Delivery.java
+//Author:		John Heuchan, Tyler Haigis, Rafay Khurram
+//Program Name:		Delivery.java
 //Program Description:	This is the linked list of the data  with PackageInfo.java.
-//						This handles this list and calls the PackageInfo methods.
-//						This controls the Delivery information
-//						
-//IDE used:				Eclipse IDE for Java Developers, Version: Oxygen Release (4.7.0)
+//			This handles this list and calls the PackageInfo methods.
+//			This controls the Delivery information			
+//IDE used:		Eclipse IDE for Java Developers, Version: Oxygen Release (4.7.0)
 
 import java.io.FileInputStream;
-//import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -39,7 +37,7 @@ public class Delivery implements Iterable<PackageInfo>, Serializable
 			list.remove(packageinfo);
 	}
 	
-//	This adds a package delivery information after package specified
+//  This adds a package delivery information after package specified
 	public void addDeliveryAfter(PackageInfo Package,PackageInfo newPackage)
 	{
 		if (Package == null || newPackage == null)
@@ -49,7 +47,7 @@ public class Delivery implements Iterable<PackageInfo>, Serializable
 			list.add(PackageLocation+1, newPackage);
 	}
 	
-//	This will change the target package delivery information with new package delivery information.
+//  This will change the target package delivery information with new package delivery information.
 	public void change(PackageInfo Package,PackageInfo newPackage)
 	{
 		if (Package == null || newPackage == null)
