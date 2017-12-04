@@ -73,7 +73,7 @@ public class PackageGUI
 					shippingQueue.enqueue(temp); // Queue for deliveries
 					//del.addDelivery(packIn);
 					//del.addDeliveryAfter(packIn, packIn);
-					del.addPickUp(new PackageInfo(PNumber,FName, LName, Address, city, state, zip, date, shipType));
+					del.addDelivery(new PackageInfo(PNumber,FName, LName, Address, city, state, zip, date, shipType));
 				}	
 			}
 			
