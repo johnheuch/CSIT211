@@ -1,10 +1,9 @@
-//Author:				John Heuchan, Tyler Haigis, Rafay Khurram
-//Program Name:			PickUp.java
+//Author:		John Heuchan, Tyler Haigis, Rafay Khurram
+//Program Name:		PickUp.java
 //Program Description:	This is the linked list of the data with PackageInfo.java.
-//						This handles this list and calls the Packageinfo methods.
-//						****THIS FILE WILL NOT BE SUBMIITED FOR FINAL
-//						This controls the Delivery information						
-//IDE used:				Eclipse IDE for Java Developers, Version: Oxygen Release (4.7.0)
+//			This handles this list and calls the Packageinfo methods.
+//			This controls the PickUp information						
+//IDE used:		Eclipse IDE for Java Developers, Version: Oxygen Release (4.7.0)
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
