@@ -61,7 +61,7 @@ public class PackageGUI
 				shipType = JOptionPane.showInputDialog(null,"Shipment Method [Pick Up/Delivery]");
 				
 				temp = new Package(PNumber, FName, LName, Address, city, state, zip, date, shipType);
-				
+				PU.addPickUp(new PackageInfo(PNumber,FName, LName, Address, city, state, zip, date, shipType);
 				if (temp.packageCheck())
 				{
 					pickupQueue.enqueue(temp); // Queue for pickups
